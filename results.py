@@ -61,13 +61,13 @@ while cap.isOpened():
     res=hands.process(rgb)
 
     if res.multi_hand_landmarks:
-        for HANDS in res.multi_hand_landmarks:
-            landmarks=[]
-            for lm in HANDS.landmark:
-                landmarks+=[lm.x,lm.y,lm.z]
-            seqences.append(landmarks)
+        HANDS = res.multi_hand_landmarks[0]
+        landmarks=[]
+        for lm in HANDS.landmark:
+            landmarks+=[lm.x,lm.y,lm.z]
+        seqences.append(landmarks)
 
-            mp_draw.draw_landmarks(frame,HANDS,mp.solutions.hands.HAND_CONNECTIONS)
+        mp_draw.draw_landmarks(frame,HANDS,mp.solutions.hands.HAND_CONNECTIONS)
         
         if len(seqences)==FRAMES:
 
