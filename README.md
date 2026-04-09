@@ -153,6 +153,4 @@ The full unified pipeline is in active development.
 
 ---
 
-## 📄 License
 
-MIT License — free to use, modify, and build on.
